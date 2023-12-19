@@ -80,6 +80,20 @@ const animals = [
   "snake",
   "dolphin",
 ];
+const storeCounter = {} //Almacenamiento de recuento de cada animal
+const exercise6 = (array) => {
+  array.forEach(animal => {
+    if(storeCounter[animal]) {
+      storeCounter[animal]++; //Si el animal existe, se incrementará su valor.
+    } else {
+      storeCounter[animal] = 1;//Si el animal NO existe, se agrega al objeto con un valor de 1.
+    }
+  }) 
+  return storeCounter
+}
+
+const resultAnimalsCounter = exercise6(animals)
+console.log(`✨ In this array we have:`,resultAnimalsCounter)
 
 //🌸 Unir arrays: Escribe una función que tome dos arrays y los una en uno solo.
 let array1 = ["a", "b", "c", "d", "e"];
@@ -102,8 +116,27 @@ const resultOrderNumbers = exercise8(disorderedNumbers);
 console.log(`✨ Here you have your array ordered from the smallest to largest number: `, resultOrderNumbers)
 
 //🌸 Eliminar elemento por valor: Escribe una función que tome un array y un valor, y elimine la primera aparición de ese valor en el array.
-const randomArray = [10, 5, 42, 7, 15, 23, 48, 5, 10];
-
+const randomArray = [10, 5, 42, 7, 15, 23, 48, 5];
+const exercise9 = (array, valor) => {
+  const findNumber = array.indexOf(valor)
+  if(findNumber !== -1){
+    array.splice(findNumber, 1)
+    return array
+  }
+}
+const valorToRemove = 42; 
+const resultDeleteNumber = exercise9(randomArray, valorToRemove);
+console.log(`✨ The removed value is: ${valorToRemove} AND the updated array is: `,resultDeleteNumber);
 
 //🌸 Duplicar cada elemento: Escribe una función que tome un array y duplique cada elemento en el array.
 const unrepeatedFlowers = ["Tulip", "Daisy", "Lily", "Sunflower", "Rose", "Orchid", "Daffodil", "Carnation"];
+
+//========= ✨ Day 2 =========//
+
+//🌼 Buscar en un array de objetos: Dado un array de objetos que tienen una propiedad específica, crea una función que busque un objeto por esa propiedad.
+
+//🌼 Transformar a mayúsculas: Crea una función que tome un array de strings y devuelva un nuevo array donde cada string esté en mayúsculas.
+
+//🌼 Eliminar elementos específicos: Escribe una función que tome un array y elimine todos los elementos que cumplan con cierta condición.
+
+//🌼 Contar ocurrencias: Crea una función que cuente cuántas veces aparece un elemento específico en un array.
