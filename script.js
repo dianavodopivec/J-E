@@ -128,15 +128,47 @@ const valorToRemove = 42;
 const resultDeleteNumber = exercise9(randomArray, valorToRemove);
 console.log(`✨ The removed value is: ${valorToRemove} AND the updated array is: `,resultDeleteNumber);
 
-//🌸 Duplicar cada elemento: Escribe una función que tome un array y duplique cada elemento en el array.
-const unrepeatedFlowers = ["Tulip", "Daisy", "Lily", "Sunflower", "Rose", "Orchid", "Daffodil", "Carnation"];
-
 //========= ✨ Day 2 =========//
 
 //🌼 Buscar en un array de objetos: Dado un array de objetos que tienen una propiedad específica, crea una función que busque un objeto por esa propiedad.
+const arrayCharacterCyberpunk = [
+    { name: "David Martinez", isAlive: false },
+    { name: "Lucyna Kushinada", isAlive: true },
+    { name: "Rebecca", isAlive: false },
+    { name: "Maine", isAlive: false },
+    { name: "Kiwi", isAlive: false }
+];
+const exercise11 = (array, property, valor) => {
+  const findObject = array.find(object => {
+    return object[property] === valor
+  })
+  return findObject
+}
+const foundObject = exercise11(arrayCharacterCyberpunk, "name", "David Martinez")
+console.log(`✨ The requested character is: `, foundObject)
 
 //🌼 Transformar a mayúsculas: Crea una función que tome un array de strings y devuelva un nuevo array donde cada string esté en mayúsculas.
+const arrayNames = ["camila", "tamara", "nayla", "rocio", "sonia", "diana"]
+const exercise12 = (array) => {
+  const namesMayus = array.map(name => {
+    return name.toUpperCase()
+  })
+  return namesMayus
+}
+const namesMayus = exercise12(arrayNames)
+console.log(`✨ Here your array in UPPERCASE:`, namesMayus)
 
 //🌼 Eliminar elementos específicos: Escribe una función que tome un array y elimine todos los elementos que cumplan con cierta condición.
+const arrayAnimals = ["Cow", "Bird", "Rabbit", "Jirafe", "Hippo", "Chameleon", "Gepard"]
+const exercise13 = (array) => {
+  const deleteElements = array.filter(element => {
+    return !element.toLowerCase().includes("i")
+  })
+  return deleteElements
+}
+const newArray = exercise13(arrayAnimals)
+console.log(newArray)
 
-//🌼 Contar ocurrencias: Crea una función que cuente cuántas veces aparece un elemento específico en un array.
+//========= ✨ Day 3 =========//
+
+// 🌺 Eliminar Números Negativos: Escribe una función que tome un array de números y elimine todos los números negativos.
