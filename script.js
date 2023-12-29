@@ -138,37 +138,56 @@ const arrayCharacterCyberpunk = [
     { name: "Maine", isAlive: false },
     { name: "Kiwi", isAlive: false }
 ];
-const exercise11 = (array, property, valor) => {
+const exercise10 = (array, property, valor) => {
   const findObject = array.find(object => {
     return object[property] === valor
   })
   return findObject
 }
-const foundObject = exercise11(arrayCharacterCyberpunk, "name", "David Martinez")
+const foundObject = exercise10(arrayCharacterCyberpunk, "name", "David Martinez")
 console.log(`✨ The requested character is: `, foundObject)
 
 //🌼 Transformar a mayúsculas: Crea una función que tome un array de strings y devuelva un nuevo array donde cada string esté en mayúsculas.
 const arrayNames = ["camila", "tamara", "nayla", "rocio", "sonia", "diana"]
-const exercise12 = (array) => {
+const exercise11 = (array) => {
   const namesMayus = array.map(name => {
     return name.toUpperCase()
   })
   return namesMayus
 }
-const namesMayus = exercise12(arrayNames)
+const namesMayus = exercise11(arrayNames)
 console.log(`✨ Here your array in UPPERCASE:`, namesMayus)
 
 //🌼 Eliminar elementos específicos: Escribe una función que tome un array y elimine todos los elementos que cumplan con cierta condición.
 const arrayAnimals = ["Cow", "Bird", "Rabbit", "Jirafe", "Hippo", "Chameleon", "Gepard"]
-const exercise13 = (array) => {
+const exercise12 = (array) => {
   const deleteElements = array.filter(element => {
     return !element.toLowerCase().includes("i")
   })
   return deleteElements
 }
-const newArray = exercise13(arrayAnimals)
-console.log(newArray)
+const newArray = exercise12(arrayAnimals)
+console.log(`✨ Here are the animals that do not have the letter I:`, newArray)
 
 //========= ✨ Day 3 =========//
 
-// 🌺 Eliminar Números Negativos: Escribe una función que tome un array de números y elimine todos los números negativos.
+//🌺 Eliminar números negativos: Escribe una función que tome un array de números y elimine todos los números negativos.
+const arrayRandomNumbers = [-148, 230, 5, 949, 12, -1, 32, 82, -44]
+const exercise13 = (array) => {
+  const arrayPositiveNumbers = array.filter(number => {
+    return number >= 0
+  })
+  return arrayPositiveNumbers
+}
+const positiveNumbers = exercise13(arrayRandomNumbers)
+console.log(`✨ Here the array without numbers negative numbers:`, positiveNumbers)
+
+//🌺 Reemplazar elementos: Escribe una función que tome un array y dos valores. La función debe reemplazar todas las ocurrencias del primer valor con el segundo valor en el array.
+
+
+
+//🌺 Buscar elemento: Crea una función que tome un array y un elemento como parámetros. Utiliza dicho método para determinar si el elemento está presente en el array.
+
+//========= ✨ Day 4 =========//
+
+//💐 Obtener un índice: 
